@@ -15,10 +15,11 @@ Page({
     scrHeight: '',
     motto: '',
     flag: false,
-    star: null,
+    star: [],
     chooseId: '',
     value: '',
-    rank:0,
+    rank: 0,
+    page:0,
   },
 
   /**
@@ -73,20 +74,41 @@ Page({
   onReady: function() {
 
   },
-
+  showall() {
+    $Toast({
+      content: 'loading',
+      type: 'loading',
+      duration: 1,
+      mask: false
+    });
+    this.getstar();
+  },
   getstar() {
     var that = this;
+    // console.log(this.data.page)
+    if(this.data.page!=-1){
+      db.collection('star').orderBy('votes', 'desc').skip(this.data.page * 5).limit(5).where({
+        isvalid: true
+      }).get({
+        success: function (res) {
+          console.log(res)
+          if (res.data.length == 0) {
+            that.setData({
+              page: -1
+            })
+          } else {
+            that.setData({
+              star: that.data.star.concat(res.data),
+              page: that.data.page + 1
+            })
+          }
 
-    db.collection('star').orderBy('votes', 'desc').where({
-      isvalid: true
-    }).get({
-      success: function(res) {
-        console.log(res)
-        that.setData({
-          star: res.data
-        })
-      }
-    })
+        }
+      })
+    }else{
+      console.log("没有了")
+    }
+
     // wx.cloud.callFunction({
     //   name: 'getStar',
     //   complete: res => {
@@ -112,12 +134,32 @@ Page({
     //   }
     // })
   },
+  lower(){
+    console.log('getnew')
+    if(this.data.page!=-1){
+      $Toast({
+        content: '加载更多',
+        type: 'loading',
+        duration: 1,
+        mask: false
+      });
+      if (this.data.rank == 0) {
+        this.getstar();
+      }
+    }else{
+      $Toast({
+        content: '没有了',
+        type: 'warning',
+        duration: 1,
+      });
+    }
 
+  },
   search_confirm(e) {
     $Toast({
       content: '正在搜索',
       type: 'loading',
-      duration: 0.5,
+      duration: 1,
       mask: false
     });
     // console.log(e.detail.value)
@@ -125,19 +167,28 @@ Page({
     db.collection('star').where({
       name: e.detail.value
     }).get({
-      success: function (res) {
+      success: function(res) {
         console.log(res)
-        db.collection('star').where({
-          votes: _.gt(res.data[0].votes)
-        }).count({
-          success: function (res2) {
-            console.log(res2.total)
-            that.setData({
-              star: res.data,
-              rank:res2.total+1
-            })
-          }
-        })
+        if (res.data.length == 0) {
+          $Toast({
+            content: '查无此人',
+            type: 'error',
+            duration: 2,
+          });
+        } else {
+          db.collection('star').where({
+            votes: _.gt(res.data[0].votes)
+          }).count({
+            success: function(res2) {
+              console.log(res2.total)
+              that.setData({
+                star: res.data,
+                rank: res2.total + 1
+              })
+            }
+          })
+        }
+
       }
     })
 
@@ -157,8 +208,6 @@ Page({
       type: 'loading',
       mask: false
     });
-
-
     wx.cloud.callFunction({
       name: 'doVote',
       data: {

@@ -1,7 +1,7 @@
 <import src='../template/vote/index' />
-<scroll-view class='main-page' scroll-y style="height:{{winHeight}}px;width:100%">
+<scroll-view class='main-page' scroll-y style="height:{{winHeight}}px;width:100%" bindscrolltolower="lower" >
   <image src='/resources/images/header_img.png' style='display:block;width:100%;height:760rpx;'></image>
-   <wux-search-bar clear maxlength="8" bind:cancel="onCancel" bind:confirm="search_confirm"  />
+   <wux-search-bar clear maxlength="8" bind:cancel="search_confirm" bind:confirm="search_confirm"  />
   <view class='outerr'>
     <view class='something'>
       <text class='rank_msg'>最新PICK排行</text>
@@ -10,6 +10,9 @@
     <block wx:for="{{star}}" wx:for-item='item' wx:for-index="idx" wx:key="uid" style="margin:10rpx;6rpx;">
       <template is="list" data="{{item:item,idx:idx,rank:rank}}" />
     </block>
+    <view wx:if="{{rank!=0}}" style='text-align:center'>
+    <image style='width:70rpx;height:70rpx;' src='/resources/images/back.png' bindtap='showall'></image>
+    </view>
   </view>
 </scroll-view>
 <view class="b1" wx:if="{{flag}}">

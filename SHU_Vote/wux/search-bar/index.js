@@ -89,7 +89,7 @@ baseComponent({
         },
         cancelText: {
             type: String,
-            value: '取消',
+            value: '搜索',
         },
         showCancel: {
             type: Boolean,
