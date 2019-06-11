@@ -17,7 +17,9 @@ Page({
       story: '',
       img: '',
       contact: '',
-      tel: ''
+      tel: '',
+      winHeight: '',
+      scrHeight: ''
     }
   },
 
@@ -25,7 +27,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    wx.getSystemInfo({
+      success: res => {
+        this.setData({
+          //windowHeight 为屏幕可用高度
+          winHeight: res.windowHeight,
+          //screenHeight 为屏幕高度
+          scrHeight: res.screenHeight
+        })
+      }
+    })
     photo = [];
   },
 

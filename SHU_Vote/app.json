@@ -1,11 +1,12 @@
 {
   "pages": [
+        
         "pages/index3/index",
     "pages/template/vote/index",
-
+"pages/submit/submit",
     "pages/index2/index",
     "pages/mine/index",
-    "pages/submit/submit",
+
     "pages/success/index",
     "pages/template/voteItem/voteItem",
     "pages/index/index",
@@ -33,7 +34,7 @@
       },
       {
         "pagePath": "pages/submit/submit",
-        "text": "提交",
+        "text": "提名",
         "iconPath": "./resources/images/submit.png",
         "selectedIconPath": "./resources/images/submitOn.png"
       }

@@ -3,3 +3,24 @@
   font-size: 0.75rem;
   color: grey;
 }
+.header_img{
+  width: 100%;
+  height: 330rpx;
+  display: block;
+}
+
+.outter{
+  background-color: rgba(255, 255, 255, 0.3);
+  padding-bottom:10rpx; 
+}
+
+.i-panel-content{
+  background-color: rgba(255, 255, 255, 0);
+}
+.submit_tip{
+  /* font-family: kaiTi; */
+  /* text-align: center; */
+  padding-top: 20rpx;
+  padding-left: 30rpx;
+
+}
