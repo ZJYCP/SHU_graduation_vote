@@ -1,0 +1,45 @@
+/* pages/template/voteItem/voteItem.wxss */
+
+.outer{
+  display: flex;
+  justify-content: center;
+
+}
+
+.left{
+  /* display: inline-flex; */
+  /* float: left; */
+  width: 300rpx;
+  height: 190rpx;
+  border:slateblue solid;
+  border-width: 3px 2px;
+}
+
+.right{
+  width: 300rpx;
+  height: 190rpx;
+  /* display: inline-flex; */
+  /* float: right; */
+  border:slateblue solid;
+  border-width: 3px 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Item_msg{
+  display: flex;
+  flex-direction: column;
+  color: rgb(40, 51,123);
+  font-size:35rpx;
+  margin-left: 4px;
+
+}
+
+.Item_vote{
+  margin-right: 4px;
+  background-color: rgb(92, 138,199);
+  padding: 10rpx 6rpx;
+  border-radius: 18rpx;
+  line-height: 39rpx;
+}

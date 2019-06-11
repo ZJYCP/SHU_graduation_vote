@@ -1,0 +1,39 @@
+/**index.wxss**/
+@import '../template/voteItem/voteItem.wxss';
+
+.count_outer{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.count_inner{
+  border-bottom: 2px solid red;
+  margin: 10px;
+  width: 50%;
+  /* height: 200px; */
+
+}
+
+.count_title{
+  font-size: 0.9rem;
+  color: gray;
+}
+
+.count_content{
+ font-size: 2rem;
+}
+
+.view-wrap{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 0.75rem;
+  color: grey;
+}
+
+.vote_today{
+  text-align: center;
+  font-size: 0.75rem;
+  color: grey;
+}

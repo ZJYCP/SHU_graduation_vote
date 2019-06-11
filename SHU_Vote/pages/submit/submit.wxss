@@ -1,0 +1,5 @@
+/* pages/submit/submit.wxss */
+.submit_tip{
+  font-size: 0.75rem;
+  color: grey;
+}

@@ -1,0 +1,7 @@
+<wux-result title="上传成功"
+    label="工作人员审核后将予以展示 "
+    buttons="{{buttons}}"
+    extra="Copyright © 2019 "
+    fixed
+    bind:click="onClick"
+/>

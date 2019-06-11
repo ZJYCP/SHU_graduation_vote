@@ -1,0 +1,41 @@
+/* pages/index2/index.wxss */
+@import '../template/voteItem/voteItem.wxss';
+.main{
+background-image: url('https://7368-shu-xs36f-1259392800.tcb.qcloud.la/bg.jpg?sign=ffbc2d40c155f1cfcf4bbd1cfae01b24&t=1559919390');
+background-size: 100% 100%;
+padding: 10px 0 0 0;
+}
+
+
+.b1 {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 999;
+}
+/* 设置展示图片大小 */
+.b2 {
+  width: 90%;
+  /* height: 90%; */
+}
+/* 设置展示图片与关闭按钮图片的距离 */
+.t_w {
+  margin-top: 20rpx;
+}
+/* 设置关闭按钮图片显示的大小 */
+.b2 image {
+  width: 100%;
+  height: 100%;
+}
+/* 设置关闭按钮宽高 */
+.t_image {
+  width: 60rpx;
+  height: 60rpx;
+}
+

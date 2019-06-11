@@ -1,0 +1,195 @@
+/* SHU_Vote/pages/index3/index.wxss */
+@import '../template/vote/index.wxss';
+
+.main-page {
+  background-image: url('https://7368-shu-xs36f-1259392800.tcb.qcloud.la/static/bg.png?sign=8974b28feaed2a4fe69bce36d7cb0e30&t=1560087937');
+  background-size: 100% 100%;
+}
+
+.outerr {
+  background-color: rgba(255, 255, 255, 0.78);
+  border-radius: 40rpx;
+  margin: 0 40rpx 40rpx 40rpx;
+}
+
+.something {
+  margin: 20rpx 40rpx;
+  position: relative;
+}
+
+.rank_msg {
+  /* position: absolute; *//* left: 4rpx; */
+  color: #444;
+  font-size: 26rpx;
+}
+
+.stop {
+  /* position: absolute; *//* right: 4rpx; */
+  color: grey;
+  font-size: 24rpx;
+  position: absolute;
+  bottom: 2rpx;
+  right: 0;
+}
+
+.b1 {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 999;
+}
+
+/* 设置展示图片大小 */
+
+.b2 {
+  width: 70%;
+  right: 0;
+  position: absolute;
+  bottom: 520rpx;
+  border-width: 8rpx 0 8rpx 8rpx;
+  border-style: solid;
+  border-color: white;
+  animation: b2_in 800ms;
+  /* height: 90%; */
+}
+@keyframes b2_in{
+    0% {
+    transform: translate(1000rpx, 0);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* 设置展示图片与关闭按钮图片的距离 */
+
+.t_w {
+  position: absolute;
+  top: 40rpx;
+  left: 40rpx;
+  z-index: 1000;
+}
+
+/* 设置关闭按钮图片显示的大小 */
+
+.b2 image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 设置关闭按钮宽高 */
+
+.t_image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.line1 {
+  position: absolute;
+  animation: fly 1300ms;
+}
+
+@keyframes fly {
+  0% {
+    transform: translate(1000rpx, -1000rpx);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.SHU {
+  position: absolute;
+  top: 100rpx;
+  height: 160rpx;
+  left: 120rpx;
+  animation: shu_fadein 2300ms;
+}
+@keyframes shu_fadein {
+  0%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
+}
+
+.corner {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 300rpx;
+  height: 320rpx;
+  /* animation: corner_in 400ms; */
+}
+@keyframes corner_in{
+    0% {
+    transform: translate(0, 500rpx);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.line3{
+  position: absolute;
+  top:0;
+  left:0;
+  width:530rpx;
+  animation: line3_in 1s;
+}
+
+@keyframes line3_in{
+      0% {
+    transform: translate(-500rpx,0);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+
+.intro {
+  position: absolute;
+  left: 0;
+  bottom: 140rpx;
+  animation: intro_in 800ms;
+}
+@keyframes intro_in{
+    0% {
+    transform: translate(-1000rpx, 0);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.intro_board {
+  width: 580rpx;
+  height: 340rpx;
+  background-color: rgba(255, 255, 255, 0.78);
+  border-radius: 0 50rpx 50rpx 0;
+}
+
+.pick {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  background-color: #66ebf6;
+  position: absolute;
+  bottom: -90rpx;
+  right: 10rpx;
+  text-align: center;
+  line-height: 160rpx;
+  border: 10rpx solid #7446fe;
+}

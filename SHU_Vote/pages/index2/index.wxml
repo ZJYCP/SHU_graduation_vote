@@ -1,0 +1,32 @@
+<!--pages/index2/index.wxml-->
+<import src='../template/voteItem/voteItem' />
+<image src='../../resources/images/header_img.jpg' style='height:170px;width:100%;display:block'></image>
+
+<!-- <image src='../../resources/images/bg.png' style='width:100%;height:{{winHeight-170}}px;' > -->
+<view class='main' style='width:100%;height:{{winHeight-180}}px;'>
+  <scroll-view scroll-y style='height:{{winHeight-180}}px'>
+    <block wx:for="{{star}}" wx:key="uid">
+      <template is="voteItem" data="{{...item}}" />
+    </block>
+  </scroll-view>
+</view>
+<view class="b1" wx:if="{{flag}}">
+  <view class="b2">
+    <swiper indicator-dots="true" autoplay="true" style='height:{{winHeight-170}}px;'>
+      <block wx:for="{{mottoImage}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item}}"  mode='aspectFit'/>
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- <image src='{{mottoImage}}' /> -->
+  </view>
+  <view class="t_w">
+    <cover-view class="t_image" bindtap="closeMask">
+      <cover-image src="/resources/images/vote.png"></cover-image>
+    </cover-view>
+  </view>
+</view>
+<i-toast id="toast" />
+
+<!-- </image> -->

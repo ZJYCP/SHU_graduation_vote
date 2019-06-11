@@ -1,0 +1,20 @@
+<!--pages/template/voteItem/voteItem.wxml-->
+<template name="voteItem">
+  <view class='outer'>
+    <view class='left' bindtap='showMask' data-img='{{photo}}'>
+      <image src='{{photo[0]}}'  lazy-load='true' style='display:inline;width:300rpx;heigth:190rpx;' mode='scaleToFill'></image>
+    </view>
+    <view class='right'>
+      <view class='Item_msg'>
+        <text style='font-size:35rpx;'> {{name}}</text>
+        <text style='font-size:27rpx;'>{{tag}}</text>
+        <text style='font-size:30rpx'>{{votes}}票</text>
+      </view>
+      <view class='Item_vote'>
+        <text style='font-size:35rpx; color:white;' bindtap='doVote' data-id='{{uid}}'>投\n票</text>
+      </view>
+    </view>
+
+  </view>
+
+</template>

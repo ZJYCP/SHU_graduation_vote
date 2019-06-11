@@ -1,0 +1,15 @@
+<!--pages/template/voteCard.wxml-->
+
+<template name="voteCard">
+<view class='card_outer' bindtap='toPerson' data-id='1'>
+  <view class='card_inner'>
+    <view class='card_id'>#0043</view>
+    <view class='card_name'>姓名</view>
+    <view class='card_intr'>一句话介绍</view>
+  </view>
+  <view class='card_inner' style='align-items:center;justify-content: space-around;'>
+    <view class='card_vote' catchtap='doVote'>投票</view>
+    <view class='card_now' >当前票数1111票</view>
+  </view>
+</view>
+</template>

@@ -1,0 +1,49 @@
+<import src="../template/voteCard.wxml" />
+<!-- 顶部滚动图片 -->
+<swiper indicator-dots="true" autoplay="true" interval="2000" duration="1000" style='height:150px'>
+  <block wx:for="{{imgUrls}}" wx:key="*this">
+    <swiper-item>
+      <image src="{{item}}" mode="scaleToFill" style='width:100%;height:150px;' />
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 信息统计 -->
+<view class='count_outer'>
+  <view class='count_inner'>
+    <view class='count_title'>累计提名 </view>
+    <view class='count_content'>1000
+      <view style='display:inline;font-size:0.8rem'>人</view>
+    </view>
+  </view>
+  <view class='count_inner'>
+    <view class='count_title'>累计投票</view>
+    <view class='count_content'>10000
+      <view style='display:inline;font-size:0.8rem'>票</view>
+    </view>
+  </view>
+</view>
+<view class="view-wrap">
+  <view>距离投票结束还有 </view>
+  <i-count-down target="{{targetTime1}}" show-day="{{true}}" format="{{myFormat1}}" clear-timer="{{clearTimer}}"></i-count-down>
+</view>
+<view class='vote_today'>你已投0次，今天还可以投6次</view>
+
+<!-- 吸顶容器 -->
+<i-sticky scrollTop="{{scrollTop}}">
+  <i-sticky-item i-class="i-sticky-demo-title">
+    <view slot="title" >
+      <!-- 选项卡 -->
+      <i-tabs current="{{ currentRank }}" bindchange="rankchange">
+        <i-tab key="tab1" title="提名顺序"></i-tab>
+        <i-tab key="tab2" title="热度排名"></i-tab>
+      </i-tabs>
+    </view>
+    <view slot="content">
+      <!-- 信息 -->
+      <block wx:for="{{15}}" wx:key="uid">
+        <template is="voteCard" data="{{...item}}" />
+      </block>
+    </view>
+  </i-sticky-item>
+</i-sticky>

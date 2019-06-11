@@ -1,0 +1,32 @@
+/* SHU_Vote/pages/mine/index.wxss */
+.up{
+  height: 30%;
+  width: 100%;
+  background-color: greenyellow;
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.avatar{
+
+  /* margin: 0 auto; */
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 90rpx;
+  background-color:transparent;
+  margin-top: 100rpx;
+  margin-bottom: 28rpx; 
+  overflow:hidden;
+  text-align: center; 
+  display: inline-block;
+}
+
+.nickname{
+  display: block;
+  color: black;
+  font-size: 30rpx;
+  font-weight: light;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}

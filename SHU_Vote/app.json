@@ -1,0 +1,64 @@
+{
+  "pages": [
+        "pages/index3/index",
+    "pages/template/vote/index",
+
+    "pages/index2/index",
+    "pages/mine/index",
+    "pages/submit/submit",
+    "pages/success/index",
+    "pages/template/voteItem/voteItem",
+    "pages/index/index",
+    "pages/person/person",
+    "pages/template/voteCard",
+    "pages/mypost/index",
+    "pages/myvote/index"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "white",
+    "navigationBarTitleText": "青春有你",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "selectedColor":"#8d85fd",
+    "list": [
+      {
+        "pagePath": "pages/index3/index",
+        "text": "投票",
+        "iconPath": "./resources/images/vote.png",
+        "selectedIconPath": "./resources/images/voteOn.png"
+      },
+      {
+        "pagePath": "pages/submit/submit",
+        "text": "提交",
+        "iconPath": "./resources/images/submit.png",
+        "selectedIconPath": "./resources/images/submitOn.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "i-tab-bar": "../../dist/tab-bar/index",
+    "i-tab-bar-item": "../../dist/tab-bar-item/index",
+    "i-count-down": "../../dist/count-down/index",
+    "i-tabs": "../../dist/tabs/index",
+    "i-tab": "../../dist/tab/index",
+    "i-panel": "../../dist/panel/index",
+    "i-input": "../../dist/input/index",
+    "i-button": "../../dist/button/index",
+    "i-sticky": "../../dist/sticky/index",
+    "i-sticky-item": "../../dist/sticky-item/index",
+    "i-toast": "./dist/toast/index",
+    "wux-cell-group": "../../wux/cell-group/index",
+    "wux-cell": "../../wux/cell/index",
+    "wux-input": "../../wux/input/index",
+    "wux-icon": "../../wux/icon/index",
+    "wux-button": "../../wux/button/index",
+    "wux-toast": "../../wux/toast/index",
+    "wux-result": "../../wux/result/index",
+    "wux-search-bar": "../../wux/search-bar/index"
+  }
+}

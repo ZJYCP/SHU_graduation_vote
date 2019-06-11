@@ -1,0 +1,44 @@
+/* pages/template/voteCard.wxss */
+
+
+.card_outer{
+  border-top: 1px solid gainsboro;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 14px;
+}
+
+.card_inner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 3px;
+}
+.card_id{
+  background-color: gainsboro;
+  color: white;
+  font-size: 0.9rem;
+  display: inline;
+  /* margin-top: 3px; */
+}
+
+.card_vote{
+  padding: 0 17px;
+  color: tomato;
+  background-color: wheat;
+  border-radius: 10px;
+}
+
+.card_now{
+  font-size: 0.8rem;
+  color: grey;
+}
+
+.card_name{
+  font-style: bold;
+  }
+
+  .card_intr{
+    font-size: 0.8rem;
+    color: grey;
+  }

@@ -1,0 +1,70 @@
+/* SHU_Vote/pages/template/vote/index.wxss */
+.vote_whole{
+  width: 100%;
+  height: 250rpx;
+ padding-bottom: 30rpx;
+  /* display: flex;
+  justify-content:center;  */
+}
+
+.vote_photoouter{
+  width: 40%;
+    height: 250rpx;
+  float: left;
+  display: flex;
+  flex-direction: row-reverse;
+
+}
+
+.vote_photoouter_odd{
+  width: 40%;
+    height: 250rpx;
+  float: right;
+  display: flex;
+  /* flex-direction: row-reverse; */
+}
+
+.vote_msgouter{
+  width:60%;
+    height: 250rpx;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.vote_msgouter_odd{
+  width:60%;
+    height: 250rpx;
+  float: left;
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.vote_photo{
+width:200rpx;
+height:200rpx;
+/* margin-right: 70rpx; */
+border: 10rpx solid #626fbb;
+line-height: 200rpx;
+border-radius: 50%;
+overflow: hidden;
+float: right;
+align-self: center;
+}
+
+.vote_msg{
+display: flex;
+margin-left: 50rpx;
+flex-direction: column;
+}
+
+.vote_do{
+  background-color: #506bba;
+  width: 140rpx;
+  height: 46rpx;
+  text-align: center;
+ 
+  border-radius: 30rpx;
+  margin-top: 10rpx;
+}
+

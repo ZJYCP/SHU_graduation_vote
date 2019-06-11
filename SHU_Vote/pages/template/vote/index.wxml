@@ -1,0 +1,21 @@
+<!--SHU_Vote/pages/template/vote/index.wxml-->
+<template name="list">
+  <view class='vote_whole'>
+    <view class='{{idx%2==0?"vote_photoouter":"vote_photoouter_odd"}}'>
+      <view class='vote_photo' bindtap='showMask' data-choose='{{item}}' data-chooseid='{{idx}}' style=''>
+        <image src='{{item.photo[0]}}' lazy-load='true' style='width:200rpx;height:200rpx;'></image>
+      </view>
+    </view>
+    <view class='{{idx%2==1?"vote_msgouter":"vote_msgouter_odd"}}'>
+      <view class='vote_msg'>
+        <text style='font-size:44rpx; color:#3646a8;line-height:50rpx;'>{{item.name}}</text>
+        <text style='font-size:27rpx; color:#6139c3;line-hight:40rpx'>{{item.tag}}</text>
+        <text style='font-size:30rpx;color:#6139c3;line-hight:60rpx'>{{item.votes}}票 当前排名{{rank==0?(idx+1):rank}}</text>
+        <view class='vote_do'>
+          <text style='font-size:30rpx; color:white;' bindtap='doVote' data-id='{{item.uid}}'>PICK TA</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</template>

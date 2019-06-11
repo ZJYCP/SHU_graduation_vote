@@ -1,0 +1,27 @@
+<!-- pages/submit/submit.wxml -->
+<view class='submit_tip'>以下内容会投票网站展示内容</view>
+<wux-cell hover-class="none">
+    <wux-input label="提名对象" error="{{ error }}" type="text" bind:blur="nameCheck" placeholder="名字" />
+</wux-cell>
+<wux-cell hover-class="none">
+    <wux-input label="提名标签" placeholder="不超过15个字" maxlength='15' bind:blur="tagcheck" />
+</wux-cell>
+<wux-cell hover-class="none">
+    <wux-input label="上大故事" placeholder="不超过100个字" bind:blur="storyCheck" maxlength='100' />
+</wux-cell>
+<i-panel title="照片展示">
+    <view wx:for="{{imglist}}" wx:for-item="image" class="previewimg" wx:key="index" style='display:inline; margin:10px;'>
+        <image src='{{image}}' data-src="{{image}}" style='width:200rpx;height:200rpx;'></image>
+    </view>
+    <button bindtap="uploadimg">上传图片</button>
+</i-panel>
+<view style='margin:4px 0'></view>
+<view class='submit_tip'>以下内容不公开，方便工作人员后续联系到您</view>
+<wux-cell hover-class="none">
+    <wux-input label="联系人" bind:blur="contactCheck" />
+</wux-cell>
+<wux-cell hover-class="none">
+    <wux-input label="手机号码" error="{{ telerror }}" type="number" bind:blur="telCheck" />
+</wux-cell>
+<wux-button block type="royal" bind:click='doSubmit'>提交</wux-button>
+<wux-toast id="wux-toast" />

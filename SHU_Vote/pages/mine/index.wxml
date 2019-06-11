@@ -1,0 +1,10 @@
+
+<view class="up">
+<open-data type="userAvatarUrl" class="avatar"></open-data>
+<open-data type="userNickName" class="nickname" ></open-data>
+</view>
+
+        <wux-cell-group title="" label="">
+            <wux-cell title="我的提名" is-link url="/pages/mypost/index" open-type="navigateTo"></wux-cell>
+            <wux-cell title="我的投票" is-link url="/pages/myvote/index" open-type="navigateTo"></wux-cell>
+        </wux-cell-group>

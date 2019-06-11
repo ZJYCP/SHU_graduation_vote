@@ -1,0 +1,5 @@
+<!--pages/person/person.wxml-->
+<view>名字</view>
+<view>一句话介绍</view>
+<view>详细介绍</view>
+<view>照片</view>
