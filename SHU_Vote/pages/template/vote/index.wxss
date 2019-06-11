@@ -8,7 +8,7 @@
 }
 
 .vote_photoouter{
-  width: 40%;
+  width: 50%;
     height: 250rpx;
   float: left;
   display: flex;
@@ -16,24 +16,34 @@
 
 }
 
+.vote_photoouter > .vote_photo{
+  margin-right: 40rpx;
+}
+
 .vote_photoouter_odd{
-  width: 40%;
+  width: 50%;
     height: 250rpx;
   float: right;
   display: flex;
   /* flex-direction: row-reverse; */
 }
-
+.vote_photoouter_odd > .vote_photo{
+  margin-left: 40rpx;
+}
 .vote_msgouter{
-  width:60%;
+  width:50%;
     height: 250rpx;
   float: right;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+.vote_msgouter > .vote_msg{
+  align-items: flex-end;
+  margin-right: 40rpx;
+}
 .vote_msgouter_odd{
-  width:60%;
+  width:50%;
     height: 250rpx;
   float: left;
     display: flex;
@@ -54,7 +64,7 @@ align-self: center;
 
 .vote_msg{
 display: flex;
-margin-left: 50rpx;
+margin-left: 40rpx;
 flex-direction: column;
 }
 

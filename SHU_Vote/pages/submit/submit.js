@@ -1,8 +1,10 @@
 // pages/submit/submit.js
 const isTel = (value) => !/^1[34578]\d{9}$/.test(value)
-import { $wuxToast } from '../../wux/index'
+import {
+  $wuxToast
+} from '../../wux/index'
 const db = wx.cloud.database()
-var photo=[]
+var photo = []
 Page({
 
   /**
@@ -22,15 +24,15 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
 
-    photo=[];
+    photo = [];
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
     this.setData({
       error: false
     })
@@ -40,47 +42,47 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
 
   uploadimg() {
-    photo=[]
+    photo = []
     var that = this
     wx.chooseImage({
       count: 2,
@@ -106,7 +108,7 @@ Page({
             fail: err => {
               // handle error
             }
-          }) 
+          })
         }
 
         // console.log(tempFilePaths)
@@ -116,33 +118,37 @@ Page({
 
   // 提交信息
   doSubmit() {
-    
+
+
+    // 有错误的情况下不能提交
+    if (this.data.error == true || this.data.postmsg.name == '' || this.data.postmsg.tel == '') {
+      $wuxToast().show({
+        type: 'cancel',
+        duration: 1500,
+        color: '#fff',
+        text: '信息有误',
+        success: () => console.log('信息有误')
+      })
+      return;
+    }
+
     console.log(this.data)
     wx.showLoading({
       title: '上传中',
     })
-    //有错误的情况下不能提交
-    // if (this.data.error==true){
-    //   $wuxToast().show({
-    //     type: 'cancel',
-    //     duration: 1500,
-    //     color: '#fff',
-    //     text: '信息有误',
-    //     success: () => console.log('信息有误')
-    // })
-    // return;
-    // }
 
     var uid
-    db.collection('star').orderBy('uid', 'desc').field({ uid: true }).limit(1)
+    db.collection('star').orderBy('uid', 'desc').field({
+        uid: true
+      }).limit(1)
       .get()
-      .then(res=>{
-        if (res.data.length==0){
-          uid=0
-        }else{
-          uid=res.data[0].uid||1
+      .then(res => {
+        if (res.data.length == 0) {
+          uid = 0
+        } else {
+          uid = res.data[0].uid || 1
         }
-        
+
         db.collection('star').add({
           // data 字段表示需新增的 JSON 数据
           data: {
@@ -154,15 +160,15 @@ Page({
             photo: photo,
             tag: this.data.postmsg.tag,
             votes: 0,
-            uid:uid+1,
-            contact:this.data.postmsg.contact,
-            posttel:this.data.postmsg.tel
+            uid: uid + 1,
+            contact: this.data.postmsg.contact,
+            posttel: this.data.postmsg.tel
           },
-          success: function (res) {
+          success: function(res) {
             // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
             console.log(res)
 
-            
+
             wx.redirectTo({
               url: '../success/index'
             })
@@ -179,25 +185,29 @@ Page({
   },
 
   nameCheck(e) {
-    var that=this;
-    db.collection('star').where({
-      name: e.detail.value
-    }).get({
-      success: function(res) {
-        console.log(res.data)
-        if (res.data.length!=0&&e.detail.value!=''){
-          console.log('已存在')
-          that.setData({
-            error: true
-          })
-        }else {
-          that.setData({
-            error: false,
-            'postmsg.name': e.detail.value
-          })
-        }
-      }
+    var that = this;
+    that.setData({
+      error: false,
+      'postmsg.name': e.detail.value
     })
+    // db.collection('star').where({
+    //   name: e.detail.value
+    // }).get({
+    //   success: function(res) {
+    //     console.log(res.data)
+    //     if (res.data.length!=0&&e.detail.value!=''){
+    //       console.log('已存在')
+    //       that.setData({
+    //         error: true
+    //       })
+    //     }else {
+    //       that.setData({
+    //         error: false,
+    //         'postmsg.name': e.detail.value
+    //       })
+    //     }
+    //   }
+    // })
   },
   tagcheck(e) {
     this.setData({
@@ -216,6 +226,7 @@ Page({
   },
   telCheck(e) {
     this.setData({
+      error: isTel(e.detail.value),
       'postmsg.tel': e.detail.value
     })
   }

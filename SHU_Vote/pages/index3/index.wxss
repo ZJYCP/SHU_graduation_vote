@@ -8,13 +8,15 @@
 
 .outerr {
   background-color: rgba(255, 255, 255, 0.78);
-  border-radius: 40rpx;
-  margin: 0 40rpx 40rpx 40rpx;
+  border-radius: 14rpx;
+  margin: 0 40rpx 200rpx 40rpx;
+  
 }
 
 .something {
   margin: 20rpx 40rpx;
   position: relative;
+  padding-top: 10rpx;
 }
 
 .rank_msg {

@@ -1,7 +1,7 @@
 <!-- pages/submit/submit.wxml -->
-<view class='submit_tip'>以下内容会投票网站展示内容</view>
+<view class='submit_tip'>以下内容为投票展示内容</view>
 <wux-cell hover-class="none">
-    <wux-input label="提名对象" error="{{ error }}" type="text" bind:blur="nameCheck" placeholder="名字" />
+    <wux-input label="提名对象" type="text" bind:blur="nameCheck" placeholder="名字" />
 </wux-cell>
 <wux-cell hover-class="none">
     <wux-input label="提名标签" placeholder="不超过15个字" maxlength='15' bind:blur="tagcheck" />
@@ -21,7 +21,7 @@
     <wux-input label="联系人" bind:blur="contactCheck" />
 </wux-cell>
 <wux-cell hover-class="none">
-    <wux-input label="手机号码" error="{{ telerror }}" type="number" bind:blur="telCheck" />
+    <wux-input label="手机号码" error="{{error}}" type="number" bind:change="telCheck" />
 </wux-cell>
 <wux-button block type="royal" bind:click='doSubmit'>提交</wux-button>
 <wux-toast id="wux-toast" />

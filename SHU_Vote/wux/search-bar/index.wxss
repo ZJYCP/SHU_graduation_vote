@@ -1,7 +1,7 @@
 .wux-search-bar {
   margin: 0 40rpx;
   position: relative;
-  padding: 16rpx 20rpx;
+  padding: 16rpx 0 0 0;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;

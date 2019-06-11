@@ -46,6 +46,7 @@ Page({
     this.getstar();
   },
 
+//下拉刷新
   onPullDownRefresh() {
     console.log('--------下拉刷新-------')
     wx.showNavigationBarLoading() //在标题栏中显示加载
@@ -54,6 +55,7 @@ Page({
     wx.stopPullDownRefresh() //停止下拉刷新
   },
 
+// 展示悬浮层
   showMask: function(e) {
     console.log(e)
     this.setData({
@@ -62,18 +64,20 @@ Page({
       chooseId: e.currentTarget.dataset.chooseid
     })
   },
+
+  // 关闭悬浮层
   closeMask: function() {
     this.setData({
       flag: false,
       motto: ''
     })
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
+
   onReady: function() {
 
   },
+
+  // 展示所有，从搜索后返回执行
   showall() {
     $Toast({
       content: 'loading',
@@ -81,18 +85,30 @@ Page({
       duration: 1,
       mask: false
     });
+    this.setData({
+      star:[],
+      rank:0
+    })
     this.getstar();
   },
+
+  // 分页获取嘉宾信息
   getstar() {
     var that = this;
     // console.log(this.data.page)
     if(this.data.page!=-1){
-      db.collection('star').orderBy('votes', 'desc').skip(this.data.page * 5).limit(5).where({
+      db.collection('star').orderBy('votes', 'desc').skip(this.data.page * 19).limit(19).where({
         isvalid: true
       }).get({
         success: function (res) {
           console.log(res)
-          if (res.data.length == 0) {
+          if (res.data.length ==0) {
+            // $Toast({
+            //   content: '没有了',
+            //   type: 'warning',
+            //   duration: 1,
+            //   mask: false
+            // });
             that.setData({
               page: -1
             })
@@ -134,27 +150,35 @@ Page({
     //   }
     // })
   },
+
+  // 页面触底执行
   lower(){
     console.log('getnew')
     if(this.data.page!=-1){
-      $Toast({
-        content: '加载更多',
-        type: 'loading',
-        duration: 1,
-        mask: false
-      });
+
       if (this.data.rank == 0) {
+        // $Toast({
+        //   content: '加载更多',
+        //   type: 'loading',
+        //   duration: 1,
+        //   mask: false
+        // });
         this.getstar();
+      }else{
+
       }
     }else{
-      $Toast({
-        content: '没有了',
-        type: 'warning',
-        duration: 1,
-      });
+      // $Toast({
+      //   content: '没有了',
+      //   type: 'warning',
+      //   duration: 1,
+      //   mask: false
+      // });
     }
 
   },
+
+  // 搜索确认
   search_confirm(e) {
     $Toast({
       content: '正在搜索',
@@ -183,7 +207,8 @@ Page({
               console.log(res2.total)
               that.setData({
                 star: res.data,
-                rank: res2.total + 1
+                rank: res2.total + 1,
+                page:0
               })
             }
           })
@@ -194,14 +219,11 @@ Page({
 
   },
 
-  onCancel(e) {
-    console.log(e)
-    this.setData({
-      value: ''
-    })
-    this.getstar()
-  },
+// 投票
   doVote(e) {
+    var that=this;
+    var pickid=e.currentTarget.dataset.chooseid
+    var upup='star['+pickid+'].votes'
     // console.log(e.currentTarget.dataset.id)
     $Toast({
       content: '投票中',
@@ -216,7 +238,10 @@ Page({
       success: res => {
         console.log(res)
         if (res.result.code === 1) {
-          this.getstar()
+          that.setData({
+            [upup]:this.data.star[pickid].votes+1
+          })
+          // this.getstar()
           $Toast({
             content: '投票成功',
             type: 'success',
