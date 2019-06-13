@@ -1,0 +1,36 @@
+<!--SHU_Vote/pages/rules/index.wxml-->
+<view style=''>
+
+  <image class='background' src='/resources/images/bg.png' style='height:{{winHeight}}px'></image>
+
+  <image src='/resources/images/rule-1.png' style='width:100%;height:400rpx;'></image>
+  <scroll-view scroll-y style='width:90%;height:{{winHeight-330}}px;background:rgba(255,255,255,0.78);margin:-10rpx auto;border-radius:36rpx;'>
+    <view class='rule'>
+      <text class='title'>提名对象</text>
+      <text class='content'>上海大学2019届本科、硕士、博士毕业生</text>
+      <text class='content'>上海大学历届校友  上海大学教职工</text>
+    </view>
+    <view class='rule'>
+      <text class='title'>提名/投票时间</text>
+      <text class='content'>即日起至 6月18日23:59 截止</text>
+    </view>
+    <view class='rule'>
+      <text class='title'>提名/投票流程</text>
+      <text class='content'>1.按照提名页面提示要求填写相关信息，可提名个人或团体，可提名本人或他人，新提名将在24小时内完成审核</text>
+      <text class='content'>2.投票期间，每个IP每天可投票1次，选择不多于5位/组候选人</text>
+      <text class='content'>3.如在投票中遇到技术问题，可致信graduate2019@qq.com邮箱/组候选人</text>
+    </view>
+    <view class='rule'>
+      <text class='title'>上海大学2019届毕业之夜</text>
+      <text class='content' decode="true">时间&nbsp;2019年6月21日 18：00</text>
+      <text class='content' decode="true">地点&nbsp;伟长楼</text>
+    </view>
+    <view class='rule'>
+      <text class='title'>活动主办</text>
+      <text class='content'>上海大学学生工作办公室</text>
+      <text class='content'>2019届毕业之夜筹备组</text>
+    </view>
+  </scroll-view>
+  <image src='/resources/images/rule-2.png' style='width:100%;height:240rpx;display:block;position:absolute;bottom:0'></image>
+
+</view>

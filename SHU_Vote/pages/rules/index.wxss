@@ -1,0 +1,26 @@
+/* SHU_Vote/pages/rules/index.wxss */
+
+.background{
+  width: 100%;
+  display: block;
+position: fixed;
+z-index: -1;
+  /* height: 100% */
+}
+
+.title{
+  display: block;
+  color: rgb(98,66,191);
+  font-size: 36rpx;
+  font-weight: 600;
+}
+
+.content{
+  display: block;
+  font-size: 32rpx;
+  color: rgb(55, 67, 149);
+  line-height: 54rpx;
+}
+.rule{
+  margin:40rpx 0 60rpx 40rpx;
+}

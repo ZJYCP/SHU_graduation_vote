@@ -166,7 +166,7 @@ Page({
             // _id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
             create_time: new Date().getTime(),
             introduction: this.data.postmsg.story,
-            isvalid: true,
+            isvalid: false,
             name: this.data.postmsg.name,
             photo: photo,
             tag: this.data.postmsg.tag,

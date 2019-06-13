@@ -6,6 +6,14 @@
   background-size: 100% 100%;
 }
 
+.gotorule{
+  position: absolute;
+  top:16rpx;
+  right: 40rpx;
+  color: white;
+  font-size: 32rpx;
+}
+
 .outerr {
   background-color: rgba(255, 255, 255, 0.78);
   border-radius: 14rpx;

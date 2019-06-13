@@ -1,6 +1,7 @@
 <import src='../template/vote/index' />
 <scroll-view class='main-page' scroll-y style="height:{{winHeight}}px;width:100%" lower-threshold="250rpx" bindscrolltolower="lower" >
   <image src='/resources/images/header_img.png' style='display:block;width:100%;height:760rpx;'></image>
+  <view class='gotorule'><navigator url="/pages/rules/index">提名规则</navigator></view>
    <wux-search-bar clear maxlength="8" bind:cancel="search_confirm" bind:confirm="search_confirm"  />
   <view class='outerr'>
     <view class='something'>

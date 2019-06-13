@@ -1,20 +1,19 @@
 {
   "pages": [
         
-        "pages/index3/index",
+    "pages/index3/index",
     "pages/template/vote/index",
-"pages/submit/submit",
+    "pages/rules/index",
+    "pages/submit/submit",
     "pages/index2/index",
     "pages/mine/index",
-
     "pages/success/index",
     "pages/template/voteItem/voteItem",
     "pages/index/index",
-    "pages/person/person",
     "pages/template/voteCard",
     "pages/mypost/index",
     "pages/myvote/index"
-    
+
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -24,7 +23,7 @@
     "enablePullDownRefresh": true
   },
   "tabBar": {
-    "selectedColor":"#8d85fd",
+    "selectedColor": "#8d85fd",
     "list": [
       {
         "pagePath": "pages/index3/index",
