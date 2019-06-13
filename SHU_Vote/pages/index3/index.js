@@ -224,6 +224,7 @@ Page({
     var that=this;
     var pickid=e.currentTarget.dataset.chooseid
     var upup='star['+pickid+'].votes'
+    var upup2 = 'star[' + this.data.chooseId+'].votes'
     // console.log(e.currentTarget.dataset.id)
     $Toast({
       content: '投票中',
@@ -237,10 +238,19 @@ Page({
       },
       success: res => {
         console.log(res)
+        console.log(pickid)
         if (res.result.code === 1) {
-          that.setData({
-            [upup]:this.data.star[pickid].votes+1
-          })
+          if (pickid){
+            that.setData({
+              [upup]: that.data.star[pickid].votes + 1
+            })
+          }else{
+            that.setData({
+              [upup2]: that.data.motto.votes + 1,
+              'motto.votes':that.data.motto.votes+1
+            })
+          }
+
           // this.getstar()
           $Toast({
             content: '投票成功',

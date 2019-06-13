@@ -19,7 +19,7 @@
           <image src='{{image}}' data-src="{{image}}" style='width:200rpx;height:200rpx;'></image>
         </view>
         <!-- <image src='/resources/images/upload.png' bindtap="uploadimg"  style='width:100rpx;height:100rpx;'></image> -->
-        <button  bindtap="uploadimg" style='width:200rpx;float:left;margin-left:30rpx;'>上传图片</button>
+        <button  bindtap="uploadimg" style='width:200rpx;float:left;margin-left:30rpx;border-radius:7px'>上传图片</button>
       </i-panel>
       <view style='margin:4px 0'></view>
       <view class='submit_tip'>以下内容不公开，方便工作人员后续联系到您</view>

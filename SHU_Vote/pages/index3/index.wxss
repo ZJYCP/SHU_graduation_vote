@@ -66,6 +66,8 @@
   border-style: solid;
   border-color: white;
   animation: b2_in 800ms;
+  border-radius: 40rpx 0 0 40rpx;
+  overflow: hidden;
   /* height: 90%; */
 }
 @keyframes b2_in{

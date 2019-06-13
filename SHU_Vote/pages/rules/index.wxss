@@ -22,5 +22,5 @@ z-index: -1;
   line-height: 54rpx;
 }
 .rule{
-  margin:40rpx 0 60rpx 40rpx;
+  margin:40rpx 40rpx 60rpx 40rpx;
 }
