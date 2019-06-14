@@ -14,6 +14,13 @@
   font-size: 32rpx;
 }
 
+.swiperitem{
+  /* border:8rpx 0 8rpx 8rpx; */
+  /* border-color:white; */
+  
+  /* overflow: hidden; */
+}
+
 .outerr {
   background-color: rgba(255, 255, 255, 0.78);
   border-radius: 14rpx;
@@ -61,12 +68,13 @@
   width: 70%;
   right: 0;
   position: absolute;
-  bottom: 520rpx;
-  border-width: 8rpx 0 8rpx 8rpx;
+  bottom: 490rpx;
+  border-width: 8rpx 0 8rpx 8rpx; 
   border-style: solid;
   border-color: white;
   animation: b2_in 800ms;
-  border-radius: 40rpx 0 0 40rpx;
+  border-radius: 40rpx 0 0 40rpx; 
+  transform: translateY(0);
   overflow: hidden;
   /* height: 90%; */
 }
@@ -172,8 +180,8 @@
 
 .intro {
   position: absolute;
-  left: 0;
-  bottom: 140rpx;
+  /* left: 0; */
+  bottom: 170rpx;
   animation: intro_in 800ms;
 }
 @keyframes intro_in{
@@ -190,7 +198,7 @@
   width: 580rpx;
   height: 340rpx;
   background-color: rgba(255, 255, 255, 0.78);
-  border-radius: 0 50rpx 50rpx 0;
+  border-radius: 40rpx;
 }
 
 .pick {

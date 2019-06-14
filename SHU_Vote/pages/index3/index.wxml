@@ -24,16 +24,16 @@
   <view class='intro'>
     <view class='intro_board'>
       <view style='display:flex;justify-content:space-between;margin:20rpx 20rpx 0 20rpx;align-items:center'>
-        <view style='display:flex;flex-direction:column;'>
+        <view style='display:flex;flex-direction:column;margin-top:14rpx;'>
           <text style='color:#3646a8;font-size:40rpx;font-style:bold;'>{{motto.name}}</text>
           <text decode='true' style='color:#6139c3;font-size:26rpx;'>{{motto.votes}}票 &nbsp;当前排名{{chooseId+1}}</text>
         </view>
-        <view style='width:60%'>
+        <view style='width:60%;line-height:28rpx;' >
          <text style='color:#6139c3;font-size:26rpx;'>{{motto.tag}}</text>
         </view>
        
       </view>
-      <view style='line-height:30rpx;margin-top:18rpx;'>
+      <view style='line-height:30rpx;margin-top:18rpx;margin-left:10rpx;margin-right:10rpx;'>
       <text style='font-size:28rpx; margin:0 5px;'>{{motto.introduction}}</text>
       </view>
       
@@ -45,7 +45,7 @@
   <view class="b2">
     <swiper indicator-dots="true" autoplay="true">
       <block wx:for="{{motto.photo}}" wx:key="index">
-        <swiper-item>
+        <swiper-item style='overflow:fidden;' >
           <image src="{{item}}" mode='aspectFill' />
         </swiper-item>
       </block>
