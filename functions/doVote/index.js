@@ -21,7 +21,7 @@ exports.main = async(event, context) => {
 
     voteToDay = voteToDay.data[0].voteToDay
 
-    if (voteToDay < 6) {
+    if (voteToDay < 5) {
       //嘉宾+1
       await db.collection('star').where({
           uid: starID

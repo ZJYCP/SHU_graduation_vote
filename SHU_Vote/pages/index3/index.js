@@ -43,6 +43,10 @@ Page({
   },
 
   onShow: function() {
+    this.setData({
+      page:0,
+      star:[]
+    })
     this.getstar();
   },
 
@@ -239,8 +243,9 @@ Page({
       success: res => {
         console.log(res)
         console.log(pickid)
+        console.log(upup)
         if (res.result.code === 1) {
-          if (pickid){
+          if (pickid==0||pickid){
             that.setData({
               [upup]: that.data.star[pickid].votes + 1
             })

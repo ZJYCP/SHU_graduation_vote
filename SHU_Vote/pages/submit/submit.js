@@ -19,7 +19,8 @@ Page({
       contact: '',
       tel: '',
       winHeight: '',
-      scrHeight: ''
+      scrHeight: '',
+      imglist:[]
     }
   },
 
@@ -132,12 +133,12 @@ Page({
 
 
     // 有错误的情况下不能提交
-    if (this.data.error == true || this.data.postmsg.name == '' || this.data.postmsg.tel == '') {
+    if (this.data.error == true || this.data.postmsg.name == '' || this.data.postmsg.tel == '' || photo.length == 0 || this.data.postmsg.story == '' || this.data.postmsg.tag == '' || this.data.postmsg.contact == '') {
       $wuxToast().show({
         type: 'cancel',
         duration: 1500,
         color: '#fff',
-        text: '信息有误',
+        text: '信息不全或有误',
         success: () => console.log('信息有误')
       })
       return;
